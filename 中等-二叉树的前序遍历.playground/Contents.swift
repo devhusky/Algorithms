@@ -60,7 +60,6 @@ var rootNode2: TreeNode? = nil
 var list2: [Int?] = [1, nil, 2, 3]
 createPreorderTree(&rootNode2, &list2)
 let r2 = Solution2().preorderTraversal(rootNode2)
-print(r2)
 
 /**
  进阶
