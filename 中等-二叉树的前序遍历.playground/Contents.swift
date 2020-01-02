@@ -23,6 +23,46 @@ func createPreorderTree(_ node: inout TreeNode?, _ list: inout [Int?]) {
 }
 
 /**
+ 方法三：莫里斯遍历
+ */
+class Solution2 {
+    func preorderTraversal(_ root: TreeNode?) -> [Int] {
+        var res = [Int]()
+        // 指向当前节点
+        var curr = root
+        // 指向前驱节点
+        var pre: TreeNode? = nil
+        while curr != nil {
+            if curr?.left == nil {
+                res.append(curr!.val)
+                curr = curr?.right
+            } else {
+                pre = curr?.left
+                while pre?.right != nil && pre?.right !== curr {
+                    pre = pre?.right
+                }
+                if pre?.right == nil {
+                    res.append(curr!.val)
+                    pre?.right = curr
+                    curr = curr?.left
+                } else {
+                    pre?.right = nil
+                    curr = curr?.right
+                }
+            }
+        }
+        return res
+    }
+}
+
+// 测试
+var rootNode2: TreeNode? = nil
+var list2: [Int?] = [1, nil, 2, 3]
+createPreorderTree(&rootNode2, &list2)
+let r2 = Solution2().preorderTraversal(rootNode2)
+print(r2)
+
+/**
  进阶
  方式二：迭代算法
  思路：
