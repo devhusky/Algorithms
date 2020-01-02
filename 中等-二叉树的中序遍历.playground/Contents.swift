@@ -96,7 +96,8 @@ class Solution1 {
 }
 
 var rootNode1: TreeNode? = nil
-var list1: [Int?] = [1, nil, 2, 3]
+//var list1: [Int?] = [1, nil, 2, 3]
+var list1: [Int?] = [1, 2, 3, nil, nil, 4, nil, nil, 5]
 createPreorderTree(&rootNode1, &list1)
 let r1 = Solution1().inorderTraversal(rootNode1)
 print(r1)
