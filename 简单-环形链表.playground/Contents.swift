@@ -1,5 +1,8 @@
 import UIKit
 
+let a = "a"
+let a_ascii = Unicode.ASCII
+
 public class ListNode {
     public var val: Int
     public var next: ListNode?
