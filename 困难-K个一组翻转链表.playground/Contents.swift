@@ -29,7 +29,12 @@ func getListNodeValues(_ head: ListNode?) -> [Int] {
     }
     return res
 }
- 
+
+/**
+ 思路：
+ 用start和end指针来圈出k个节点。将这区间内的几点进行翻转。翻转方法：每次将curr节点插入到start.next的位置去。
+ 当start.next == end时，说明这一组的节点已全部翻转完成。
+ */
 class Solution {
     func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
         let node = ListNode(0)
@@ -62,8 +67,7 @@ class Solution {
 // 测试
 var nums = [1, 2, 3, 4, 5]
 var head = createListNode(nums)
-//var res = Solution().reverseKGroup(head, 3)
-var res = Solution().reverse(head)
+var res = Solution().reverseKGroup(head, 3)
 print(getListNodeValues(res))
 
 /**
