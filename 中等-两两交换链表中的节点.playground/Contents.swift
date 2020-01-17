@@ -11,7 +11,7 @@ public class ListNode {
 
 class Solution {
     func swapPairs(_ head: ListNode?) -> ListNode? {
-        var pre = ListNode(0)
+        let pre = ListNode(0)
         pre.next = head
         let res = pre.next?.next
         while pre.next != nil && pre.next?.next != nil {
